@@ -31,13 +31,27 @@
 // console.log(r);
 
 //simple API//////////////////////////////////////////////////
-const http = require('http');
-const data = require('./data');
-http.createServer((req, resp) => {
-  resp.writeHead(200, { 'Content-Type': 'application/json' });
-  resp.write(JSON.stringify(data));
-  resp.end();
-}).listen(3000);
+// const http = require('http');
+// const data = require('./data');
+// http.createServer((req, resp) => {
+//   resp.writeHead(200, { 'Content-Type': 'application/json' });
+//   resp.write(JSON.stringify(data));
+//   resp.end();
+// }).listen(3000);
+
+const fs = require('fs');
+const path = require('path');
+const dirpath = path.join(__dirname,'files');
+
+for (let index = 0; index < 5; index++) {
+  
+  fs.writeFileSync(path.join(dirpath,`file${index}.txt`),`Hello World ${index}`);
+  
+}
+
+fs.readdir(dirpath,(err,files)=>{
+  console.log(files);
+})
 
 
 
