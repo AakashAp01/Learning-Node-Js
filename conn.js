@@ -9,7 +9,7 @@ module.exports = async function getConn(dbName) {
 
         // Select the database
         const db = client.db(dbName);
-
+ 
         // Return the database instance
         return db;
     } catch (error) {
