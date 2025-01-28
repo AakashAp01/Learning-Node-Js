@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const StudentsSchema = mongoose.Schema({
     name: String,
-    class: Number,
+    class: String,
     surename: String
 }, { versionKey: false });
 
