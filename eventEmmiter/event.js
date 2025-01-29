@@ -8,19 +8,19 @@ const eventEmmiter = new EventEmmiter();
 
 let count = 0
 
-eventEmmiter.on('called',()=>{
+eventEmmiter.on('called', () => {
     count++;
     console.log(`API has been called ${count} times`);
 })
 
 
-app.get('/',(req,resp)=>{
+app.get('/', (req, resp) => {
     eventEmmiter.emit('called')
     resp.send(`Home API called. Total API Calls: ${count}`);
 })
 
-app.get('/search',(req,resp)=>{
-    eventEmmiter.emit('called')   
+app.get('/search', (req, resp) => {
+    eventEmmiter.emit('called')
     resp.send(`Search API called. Total API Calls: ${count}`);
 })
 
