@@ -19,6 +19,7 @@ app.get('/', (req, resp) => {
     resp.send(`Home API called. Total API Calls: ${count}`);
 })
 
+
 app.get('/search', (req, resp) => {
     eventEmmiter.emit('called')
     resp.send(`Search API called. Total API Calls: ${count}`);
