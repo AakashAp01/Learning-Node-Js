@@ -20,6 +20,7 @@ app.get('/', (req, resp) => {
 })
 
 
+
 app.get('/search', (req, resp) => {
     eventEmmiter.emit('called')
     resp.send(`Search API called. Total API Calls: ${count}`);
